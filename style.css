@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.navbar .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .logo h4 {
+    margin-left: 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    padding: 10px 30px 0px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar ul li a:hover {
+    color: rgb(135, 135, 135);
+}
+
+.navbar ul li a:hover .ARROWDOWN path {
+    fill: rgb(135, 135, 135);
+}
+
+.navbar ul li.closeNav {
+    display: none;
+}
+
+.dropDown {
+    display: block;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0px 40px 70px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.dropDown ul {
+    display: none;
+}
+
+.dropDown ul li:first-child {
+    margin: 20px 0 0px 0px;
+}
+
+.dropDown ul li {
+    margin: 20px 0;
+}
+
+.navbar ul li:hover .dropDown ul {
+    display: block;
+}
+
+.navbar #menuToogle {
+    display: none;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .navbar ul li {
+        padding: 10px 20px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul li {
+        padding: 10px 17px 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        transition: ease 1s;
+    }
+    .navbar ul {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        transform: translateX(100%);
+        flex-direction: column;
+        height: 100vh;
+        width: 80%;
+        justify-content: left;
+        align-items: flex-start;
+        background-color: #b70f18;
+        transition: ease 0.6s;
+        z-index: 9;
+    }
+    .navbar ul.muncul {
+        transform: translateX(0);
+    }
+    .navbar ul li {
+        padding: 20px 30px;
+    }
+    .navbar ul li a {
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+    }
+    .navbar ul li a:hover {
+        color: #e86167;
+    }
+    .navbar #menuToogle {
+        display: flex;
+        cursor: pointer;
+    }
+    .navbar ul li.closeNav {
+        display: block;
+    }
+    .ARROWDOWN path {
+        fill: rgb(255, 255, 255);
+    }
+    .dropDown {
+        display: flex;
+        position: relative;
+        z-index: 99;
+        left: -100%;
+        top: 0%;
+        background-color: rgb(65, 64, 64) !important;
+        box-shadow: 0px 40px 70px rgba(0, 0, 0, 0.1);
+    }
+    .dropDown ul {
+        margin-top: 17px;
+    }
+    .navbar ul li:hover .dropDown ul {
+        display: flex;
+        background-color: #611014;
+        height: inherit;
+        width: 50vw;
+        border-radius: 10px;
+    }
+    .dropDown ul li:first-child {
+        margin: 20px;
+    }
+    .dropDown ul li {
+        padding: 4px;
+        margin: 20px;
+        /* background-color: aliceblue; */
+    }
+}
